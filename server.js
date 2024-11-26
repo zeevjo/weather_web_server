@@ -13,6 +13,7 @@ if (!process.env.API_KEY || !process.env.BASE_URL) {
 const app = express();
 const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.API_KEY;
+const BASE_URL = process.env.BASE_URL;
 
 app.use(express.json());
 
