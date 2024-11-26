@@ -43,7 +43,7 @@ Fetch the current weather details for a specific location.
 
 #Example
 
-`https://your-server-domain.com/api/weather?location=${your_location}`
+`https://weather-web-server-7xqe.onrender.com/api/weather?location=${your_location}`
 
 ### 2. Get Weather Forecast
 
@@ -57,7 +57,7 @@ Fetch a 5-day weather forecast for a specific location.
 
 - **Example Request:** 
 
-`https://your-server-domain.com/api/forecast?location=${your_location}`
+`https://weather-web-server-7xqe.onrender.com/api/forecast?location=${your_location}`
 
 
 
