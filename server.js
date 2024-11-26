@@ -2,55 +2,69 @@ import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
 
-dotenv.config(); 
-const app = express();
+dotenv.config();
 
+if (!process.env.API_KEY || !process.env.BASE_URL) {
+  throw new Error(
+    "Environment variables missing: API_KEY and/or BASE_URL are not set."
+  );
+}
+
+const app = express();
 const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.API_KEY;
 
 app.use(express.json());
 
-app.get("/api/weather", async (req, res) => {
-    const { location } = req.query;
-    
-    if (!location) return res.status(400).json({ error: "Location is required" });
+const fetchWeatherData = async (endpoint, location) => {
+  const url = `${BASE_URL}/${endpoint}?q=${location}&appid=${API_KEY}&units=metric`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API Error: ${response.status} - ${errorText}`);
+  }
+  return response.json();
+};
 
-    try {
-        const weatherResponse = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
-        );
+const validateLocationQuery = (req, res, next) => {
+  const { location } = req.query;
+  if (!location) {
+    return res
+      .status(400)
+      .json({ success: false, error: "Location is required." });
+  }
+  next();
+};
 
-        if (!weatherResponse.ok)
-            return res.status(404).json({ error: "Location not found" });
+app.get("/api/weather", validateLocationQuery, async (req, res, next) => {
+  const { location } = req.query;
 
-        const weatherData = await weatherResponse.json();
-        res.json(weatherData);
-    } catch (error) {
-        console.error("Error fetching weather data:", error);
-        res.status(500).json({ error: "Failed to fetch weather data" });
-    }
+  try {
+    const weatherData = await fetchWeatherData("weather", location);
+    res.json({ success: true, data: weatherData });
+  } catch (error) {
+    next(error);
+  }
 });
 
-app.get("/api/forecast", async (req, res) => {
-    const { location } = req.query;
-    if (!location) return res.status(400).json({ error: "Location is required" });
+app.get("/api/forecast", validateLocationQuery, async (req, res, next) => {
+  const { location } = req.query;
 
-    try {
-        const forecastResponse = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
-        );
+  try {
+    const forecastData = await fetchWeatherData("forecast", location);
+    res.json({ success: true, data: forecastData });
+  } catch (error) {
+    next(error);
+  }
+});
 
-        if (!forecastResponse.ok)
-            return res.status(404).json({ error: "Location not found" });
-
-        const forecastData = await forecastResponse.json();
-        res.json(forecastData);
-    } catch (error) {
-        console.error("Error fetching forecast data:", error);
-        res.status(500).json({ error: "Failed to fetch forecast data" });
-    }
+app.use((error, req, res, next) => {
+  console.error("Error:", error.message);
+  res
+    .status(500)
+    .json({ success: false, error: error.message || "Internal Server Error" });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
