@@ -123,10 +123,8 @@ Fetch a 5-day weather forecast using latitude and longitude.
   For example:
 
 - **Example Request:**
-
   `https://openweathermap.org/img/wn/<icon>@2x.png`
 
-  no worries there is no need for a API_KEY
 
 ## Usage Notes
 
