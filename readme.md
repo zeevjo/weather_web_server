@@ -13,6 +13,7 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 - [Usage Notes](#usage-notes)
 
 <br>
+
 ## Tech Used
 
 - **Node.js**: Server runtime to handle requests and manage the API.
@@ -21,6 +22,7 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 - **Render**: Hosting platform for deploying the server.
 
 <br>
+
 ## Base URL
 
 The server is live and can be accessed at:
@@ -28,6 +30,7 @@ The server is live and can be accessed at:
 `https://weather-web-server-7xqe.onrender.com`
 
 <br>
+
 ## Endpoints
 
 ### 1. Get Current Weather
