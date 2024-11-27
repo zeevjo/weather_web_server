@@ -90,7 +90,8 @@ Fetch a 5-day weather forecast for a specific location.
   - lang (optional): Language code for localized weather descriptions. Default is en (English).
 
 - **Example Request:**
-  `https://weather-web-server-7xqe.onrender.com/api/weather/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
+
+`https://weather-web-server-7xqe.onrender.com/api/weather/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
 <br>
 
 ### 4. Get Weather Forecast by Coordinates
@@ -105,6 +106,8 @@ Fetch a 5-day weather forecast using latitude and longitude.
   - lat (required): Latitude of the location (e.g., 40.7128).
   - lon (required): Longitude of the location (e.g., -74.0060).
   - lang (optional): Language code for localized weather descriptions. Default is en (English).
+
+- **Example Request:**
 
   `https://weather-web-server-7xqe.onrender.com/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
 <br>
