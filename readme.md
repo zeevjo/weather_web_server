@@ -82,7 +82,7 @@ Fetch a 5-day weather forecast for a specific location.
 
 <br>
 
-3. . Get Current Weather by Coordinates
+### 3. Get Current Weather by Coordinates
 
    Fetch the current weather details using latitude and longitude.
 
@@ -100,7 +100,7 @@ Fetch a 5-day weather forecast for a specific location.
 
 <br>
 
-4. Get Weather Forecast by Coordinates
+### 4. Get Weather Forecast by Coordinates
 
 Fetch a 5-day weather forecast using latitude and longitude.
 
