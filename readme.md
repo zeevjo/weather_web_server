@@ -12,7 +12,8 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
   - [2. Get Weather Forecast](#2-get-weather-forecast)
   - [3. Get Current Weather by Coordinates](#3-get-current-weather-by-coordinates)
   - [4. Get Weather Forecast by Coordinates](#4-get-weather-forecast-by-coordinates)
-  - [5. Get Weather icon (image) representing the weather condition](#5-get-image-icon-weather-condition)
+  - [5. Get Weather icon (image) representing the weather condition](#5-get-weather-icon-image-representing-the-weather-condition)
+
 
 - [Example](#example)
 - [Usage Notes](#usage-notes)
