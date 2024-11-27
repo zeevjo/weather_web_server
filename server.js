@@ -17,16 +17,6 @@ const BASE_URL = process.env.BASE_URL;
 
 app.use(express.json());
 
-const fetchWeatherData = async (endpoint, location, lang = "en") => {
-  const url = `${BASE_URL}/${endpoint}?q=${location}&appid=${API_KEY}&units=metric&lang=${lang}`;
-  const response = await fetch(url);
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`API Error: ${response.status} - ${errorText}`);
-  }
-  return response.json();
-};
-
 const validateLocationQuery = (req, res, next) => {
   const { location } = req.query;
   if (!location) {
@@ -38,9 +28,13 @@ const validateLocationQuery = (req, res, next) => {
 };
 
 app.get("/api/weather", validateLocationQuery, async (req, res, next) => {
-  const { location, lang } = req.query; 
+  const { location, lang } = req.query;
   try {
-    const weatherData = await fetchWeatherData("weather", location, lang || "en");
+    const weatherData = await fetchWeatherData(
+      "weather",
+      location,
+      lang || "en"
+    );
     res.json({ success: true, data: weatherData });
   } catch (error) {
     next(error);
@@ -48,13 +42,51 @@ app.get("/api/weather", validateLocationQuery, async (req, res, next) => {
 });
 
 app.get("/api/forecast", validateLocationQuery, async (req, res, next) => {
-  const { location, lang } = req.query; 
+  const { location, lang } = req.query;
   try {
-    const forecastData = await fetchWeatherData("forecast", location, lang || "en");
+    const forecastData = await fetchWeatherData(
+      "forecast",
+      location,
+      lang || "en"
+    );
     res.json({ success: true, data: forecastData });
   } catch (error) {
     next(error);
   }
+});
+
+app.get("/api/weather/coordinates", async (req, res, next) => {
+  const { lat, lon, lang } = req.query;
+  try {
+    const weatherData = await fetchWeatherDataByCoordinates(
+      "weather",
+      lat,
+      lon,
+      lang || "en"
+    );
+    res.json({ success: true, data: weatherData });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get("/api/forecast/coordinates", async (req, res, next) => {
+  const { lat, lon, lang } = req.query;
+  try {
+    const forecastData = await fetchWeatherDataByCoordinates(
+      "forecast",
+      lat,
+      lon,
+      lang || "en"
+    );
+    res.json({ success: true, data: forecastData });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get("/api/cronjob", async (req, res) => {
+  res.send("Cron job executed successfully!");
 });
 
 app.use((error, req, res, next) => {
@@ -64,9 +96,34 @@ app.use((error, req, res, next) => {
     .json({ success: false, error: error.message || "Internal Server Error" });
 });
 
-app.get("/api/cronjob", async (req, res) => {
-  res.send("Cron job executed successfully!");
-});
+const fetchWeatherData = async (endpoint, location, lang = "en") => {
+  const url = `${BASE_URL}/${endpoint}?q=${location}&appid=${API_KEY}&units=metric&lang=${lang}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API Error: ${response.status} - ${errorText}`);
+  }
+  return response.json();
+};
+
+const fetchWeatherDataByCoordinates = async (
+  endpoint,
+  lat,
+  lon,
+  lang = "en"
+) => {
+  if (!lat || !lon) {
+    throw new Error("Latitude (lat) and Longitude (lon) are required.");
+  }
+
+  const url = `${BASE_URL}/${endpoint}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=${lang}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API Error: ${response.status} - ${errorText}`);
+  }
+  return response.json();
+};
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

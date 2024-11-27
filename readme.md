@@ -43,6 +43,8 @@ Fetch the current weather details for a specific location.
 
 `https://weather-web-server-7xqe.onrender.com/api/weather?location=<location>&lang=<Language>`
 
+<br>
+
 # Language options
 
 | Language             | Code  | Language              | Code  |
@@ -55,6 +57,8 @@ Fetch the current weather details for a specific location.
 | Chinese (Simplified) | zh_cn | Chinese (Traditional) | zh_tw |
 | Japanese             | ja    | Korean                | kr    |
 | Swedish              | se    | Turkish               | tr    |
+
+<br>
 
 ### 2. Get Weather Forecast
 
@@ -69,6 +73,45 @@ Fetch a 5-day weather forecast for a specific location.
 - **Example Request:**
 
 `https://weather-web-server-7xqe.onrender.com/api/forecast?location=<location>&lang=<Language>`
+
+<br>
+
+3. . Get Current Weather by Coordinates
+
+   Fetch the current weather details using latitude and longitude.
+
+- **Endpoint:**  
+  `GET /api/weather/coordinates`
+
+- **Query Parameters:**
+
+  - lat (required): Latitude of the location (e.g., 51.5074).
+  - lon (required): Longitude of the location (e.g., -0.1278).
+  - lang (optional): Language code for localized weather descriptions. Default is en (English).
+
+- **Example Request:**
+  `https://weather-web-server-7xqe.onrender.com/api/weather/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
+
+<br>
+
+4. Get Weather Forecast by Coordinates
+
+Fetch a 5-day weather forecast using latitude and longitude.
+
+- **Endpoint:**  
+  `GET /api/weather/coordinates`
+
+- **Query Parameters:**
+
+  - lat (required): Latitude of the location (e.g., 40.7128).
+  - lon (required): Longitude of the location (e.g., -74.0060).
+  - lang (optional): Language code for localized weather descriptions. Default is en (English).
+
+  `https://weather-web-server-7xqe.onrender.com/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
+
+<br>
+<br>
+<br>
 
 ## Usage Notes
 
