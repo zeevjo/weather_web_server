@@ -40,7 +40,7 @@ Fetch the current weather details for a specific location.
   - `location` (required): The name of the city or location (e.g., `London`).
 
 
-#Example
+# Example
 
 `https://weather-web-server-7xqe.onrender.com/api/weather?location=<your_location>`
 
