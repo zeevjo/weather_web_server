@@ -134,7 +134,6 @@ Fetch a 5-day weather forecast using latitude and longitude.
 3. The API responses are directly fetched from OpenWeatherMap, including real-time weather data and forecasts.
 
 <br>
-<br>
 
 ## Disclaimer
 
@@ -142,4 +141,4 @@ This project is for educational purposes and aims to provide a solution for stud
 It is not a commercial product, and there is no permission for those who did not receive the repository to use it.  
 Unauthorized use of this code or project is prohibit
 
-Ze`ev Joseph
+### Author: Ze`ev Joseph
