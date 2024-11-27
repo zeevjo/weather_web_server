@@ -5,7 +5,6 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Base URL](#base-url)
 - [Endpoints](#endpoints)
   - [1. Get Current Weather](#1-get-current-weather)
@@ -43,7 +42,7 @@ Fetch the current weather details for a specific location.
 
 #Example
 
-`https://weather-web-server-7xqe.onrender.com/api/weather?location=${your_location}`
+`https://weather-web-server-7xqe.onrender.com/api/weather?location=<your_location>`
 
 ### 2. Get Weather Forecast
 
@@ -57,7 +56,7 @@ Fetch a 5-day weather forecast for a specific location.
 
 - **Example Request:** 
 
-`https://weather-web-server-7xqe.onrender.com/api/forecast?location=${your_location}`
+`https://weather-web-server-7xqe.onrender.com/api/forecast?location=<your_location>`
 
 
 
@@ -67,7 +66,7 @@ Fetch a 5-day weather forecast for a specific location.
 2. The API responses are directly fetched from OpenWeatherMap, including real-time weather data and forecasts.
 3. Use the `weather` object's `icon` value in the response to fetch weather icons from OpenWeatherMap. For example:  
 
-`https://openweathermap.org/img/wn/01d@2x.png`
+`https://openweathermap.org/img/wn/<icon>@2x.png`
 
 
 ## Disclaimer
