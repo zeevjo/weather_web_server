@@ -66,7 +66,7 @@ app.use((error, req, res, next) => {
     .json({ success: false, error: error.message || "Internal Server Error" });
 });
 
-app.get("api/cronjob", async (req, res) => {
+app.get("/api/cronjob", async (req, res) => {
   res.send("Cron job executed successfully!");
 });
 
