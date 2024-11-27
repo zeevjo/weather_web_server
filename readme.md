@@ -7,8 +7,12 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 
 - [Base URL](#base-url)
 - [Endpoints](#endpoints)
+
   - [1. Get Current Weather](#1-get-current-weather)
   - [2. Get Weather Forecast](#2-get-weather-forecast)
+  - [3. Get Current Weather by Coordinates](#3-get-current-weather-by-coordinates)
+  - [4. Get Current Forecast by Coordinates](#4-get-current-forecast-by-coordinates)
+
 - [Example](#example)
 - [Usage Notes](#usage-notes)
 <br>
