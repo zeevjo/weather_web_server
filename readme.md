@@ -117,15 +117,23 @@ Fetch a 5-day weather forecast using latitude and longitude.
   `https://weather-web-server-7xqe.onrender.com/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
   <br>
 
+### 5. Get Weather icon (image) representing the weather condition
+
+- Use the `weather` object's `icon` value in the response to fetch weather icons from OpenWeatherMap.
+  For example:
+
+- **Example Request:**
+
+  `https://openweathermap.org/img/wn/<icon>@2x.png`
+
+  no worries there is no need for a API_KEY
+
 ## Usage Notes
 
 1. Ensure you provide a valid `location` query parameter when making requests to the endpoints.
 2. The optional lang query parameter allows for localized weather descriptions. If not provided,
    the default language is English (en).
 3. The API responses are directly fetched from OpenWeatherMap, including real-time weather data and forecasts.
-4. Use the `weather` object's `icon` value in the response to fetch weather icons from OpenWeatherMap. For example:
-
-`https://openweathermap.org/img/wn/<icon>@2x.png`
 
 <br>
 <br>
