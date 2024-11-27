@@ -3,6 +3,8 @@
 This server acts as a secure intermediary to fetch weather data from the OpenWeatherMap API.
 It abstracts the need to use an API key in an unsecured manner due to the limitations of the vanilla front-end project.
 
+
+
 ## Table of Contents
 
 - [Base URL](#base-url)
@@ -12,6 +14,8 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 - [Example](#example)
 - [Usage Notes](#usage-notes)
 
+
+
 ## Tech Used
 
 - **Node.js**: Server runtime to handle requests and manage the API.  
@@ -20,11 +24,15 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 - **Render**: Hosting platform for deploying the server.
 
 
+
+
 ## Base URL
 
 The server is live and can be accessed at:
 
 `https://weather-web-server-7xqe.onrender.com`
+
+
 
 
 ## Endpoints
@@ -38,6 +46,8 @@ Fetch the current weather details for a specific location.
 
 - **Query Parameters:**  
   - `location` (required): The name of the city or location (e.g., `London`).
+
+
 
 
 # Example
@@ -60,6 +70,8 @@ Fetch a 5-day weather forecast for a specific location.
 
 
 
+
+
 ## Usage Notes
 
 1. Ensure you provide a valid `location` query parameter when making requests to the endpoints.
@@ -67,6 +79,8 @@ Fetch a 5-day weather forecast for a specific location.
 3. Use the `weather` object's `icon` value in the response to fetch weather icons from OpenWeatherMap. For example:  
 
 `https://openweathermap.org/img/wn/<icon>@2x.png`
+
+
 
 
 ## Disclaimer
