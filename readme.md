@@ -85,3 +85,5 @@ Fetch a 5-day weather forecast for a specific location.
 This project is for educational purposes and aims to provide a solution for students.  
 It is not a commercial product, and there is no permission for those who did not receive the repository to use it.  
 Unauthorized use of this code or project is prohibit
+
+Ze`ev Joseph
