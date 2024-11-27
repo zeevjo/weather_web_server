@@ -1,6 +1,7 @@
 import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.API_KEY;
 const BASE_URL = process.env.BASE_URL;
 
+app.use(cors());
 app.use(express.json());
 
 const validateLocationQuery = (req, res, next) => {
