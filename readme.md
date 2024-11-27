@@ -11,7 +11,6 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
   - [2. Get Weather Forecast](#2-get-weather-forecast)
 - [Example](#example)
 - [Usage Notes](#usage-notes)
-
 <br>
 
 ## Tech Used
@@ -20,7 +19,6 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 - **Express.js**: Simplifies API routing and server setup.
 - **OpenWeatherMap API**: Provides weather data and forecasts.
 - **Render**: Hosting platform for deploying the server.
-
 <br>
 
 ## Base URL
@@ -28,7 +26,6 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 The server is live and can be accessed at:
 
 `https://weather-web-server-7xqe.onrender.com`
-
 <br>
 
 ## Endpoints
@@ -48,7 +45,6 @@ Fetch the current weather details for a specific location.
 # Example
 
 `https://weather-web-server-7xqe.onrender.com/api/weather?location=<location>&lang=<Language>`
-
 <br>
 
 # Language options
@@ -63,7 +59,6 @@ Fetch the current weather details for a specific location.
 | Chinese (Simplified) | zh_cn | Chinese (Traditional) | zh_tw |
 | Japanese             | ja    | Korean                | kr    |
 | Swedish              | se    | Turkish               | tr    |
-
 <br>
 
 ### 2. Get Weather Forecast
@@ -79,7 +74,6 @@ Fetch a 5-day weather forecast for a specific location.
 - **Example Request:**
 
 `https://weather-web-server-7xqe.onrender.com/api/forecast?location=<location>&lang=<Language>`
-
 <br>
 
 ### 3. Get Current Weather by Coordinates
@@ -97,7 +91,6 @@ Fetch a 5-day weather forecast for a specific location.
 
 - **Example Request:**
   `https://weather-web-server-7xqe.onrender.com/api/weather/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
-
 <br>
 
 ### 4. Get Weather Forecast by Coordinates
@@ -114,7 +107,6 @@ Fetch a 5-day weather forecast using latitude and longitude.
   - lang (optional): Language code for localized weather descriptions. Default is en (English).
 
   `https://weather-web-server-7xqe.onrender.com/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
-
 <br>
 
 ## Usage Notes
@@ -126,6 +118,9 @@ Fetch a 5-day weather forecast using latitude and longitude.
 4. Use the `weather` object's `icon` value in the response to fetch weather icons from OpenWeatherMap. For example:
 
 `https://openweathermap.org/img/wn/<icon>@2x.png`
+
+<br>
+<br>
 
 ## Disclaimer
 
