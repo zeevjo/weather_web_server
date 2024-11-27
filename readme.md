@@ -55,16 +55,66 @@ Fetch the current weather details for a specific location.
 
 # Language options
 
-| Language             | Code  | Language              | Code  |
-| -------------------- | ----- | --------------------- | ----- |
-| English              | en    | German                | de    |
-| Spanish              | es    | Hebrew                | he    |
-| French               | fr    | Portuguese            | pt    |
-| Italian              | it    | Dutch                 | nl    |
-| Russian              | ru    | Arabic                | ar    |
-| Chinese (Simplified) | zh_cn | Chinese (Traditional) | zh_tw |
-| Japanese             | ja    | Korean                | kr    |
-| Swedish              | se    | Turkish               | tr    |
+<table>
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Code</th>
+      <th>Language</th>
+      <th>Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>English</td>
+      <td>en</td>
+      <td>German</td>
+      <td>de</td>
+    </tr>
+    <tr>
+      <td>Spanish</td>
+      <td>es</td>
+      <td>Hebrew</td>
+      <td>he</td>
+    </tr>
+    <tr>
+      <td>French</td>
+      <td>fr</td>
+      <td>Portuguese</td>
+      <td>pt</td>
+    </tr>
+    <tr>
+      <td>Italian</td>
+      <td>it</td>
+      <td>Dutch</td>
+      <td>nl</td>
+    </tr>
+    <tr>
+      <td>Russian</td>
+      <td>ru</td>
+      <td>Arabic</td>
+      <td>ar</td>
+    </tr>
+    <tr>
+      <td>Chinese (Simplified)</td>
+      <td>zh_cn</td>
+      <td>Chinese (Traditional)</td>
+      <td>zh_tw</td>
+    </tr>
+    <tr>
+      <td>Japanese</td>
+      <td>ja</td>
+      <td>Korean</td>
+      <td>kr</td>
+    </tr>
+    <tr>
+      <td>Swedish</td>
+      <td>se</td>
+      <td>Turkish</td>
+      <td>tr</td>
+    </tr>
+  </tbody>
+</table>
 
 <br>
 
