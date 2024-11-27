@@ -5,7 +5,7 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 
 ## Table of Contents
 
-- [Base URL](#base-url)
+- [BASE URL](#base-url)
 - [Endpoints](#endpoints)
 
   - [1. Get Current Weather](#1-get-current-weather)
@@ -25,7 +25,7 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 - **Render**: Hosting platform for deploying the server.
   <br>
 
-## Base URL
+## BASE URL
 
 The server is live and can be accessed at:
 
