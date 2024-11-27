@@ -120,7 +120,7 @@ Fetch a 5-day weather forecast using latitude and longitude.
   `https://weather-web-server-7xqe.onrender.com/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
   <br>
 
-### 5. Get Weather icon (image) representing the weather condition
+### 5. Get Weather icon (image)
 
 - Use the `weather` object's `icon` value in the response to fetch weather icons from OpenWeatherMap.
   For example:
