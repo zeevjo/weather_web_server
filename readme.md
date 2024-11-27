@@ -11,11 +11,11 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
   - [1. Get Current Weather](#1-get-current-weather)
   - [2. Get Weather Forecast](#2-get-weather-forecast)
   - [3. Get Current Weather by Coordinates](#3-get-current-weather-by-coordinates)
-  - [4. Get Weather Forecast by Coordinates](#4-get-current-forecast-by-coordinates)
+  - [4. Get Weather Forecast by Coordinates](#4-get-weather-forecast-by-coordinates)
 
 - [Example](#example)
 - [Usage Notes](#usage-notes)
-<br>
+  <br>
 
 ## Tech Used
 
@@ -23,7 +23,7 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 - **Express.js**: Simplifies API routing and server setup.
 - **OpenWeatherMap API**: Provides weather data and forecasts.
 - **Render**: Hosting platform for deploying the server.
-<br>
+  <br>
 
 ## Base URL
 
@@ -63,6 +63,7 @@ Fetch the current weather details for a specific location.
 | Chinese (Simplified) | zh_cn | Chinese (Traditional) | zh_tw |
 | Japanese             | ja    | Korean                | kr    |
 | Swedish              | se    | Turkish               | tr    |
+
 <br>
 
 ### 2. Get Weather Forecast
@@ -82,7 +83,7 @@ Fetch a 5-day weather forecast for a specific location.
 
 ### 3. Get Current Weather by Coordinates
 
-   Fetch the current weather details using latitude and longitude.
+Fetch the current weather details using latitude and longitude.
 
 - **Endpoint:**  
   `GET /api/weather/coordinates`
@@ -114,7 +115,7 @@ Fetch a 5-day weather forecast using latitude and longitude.
 - **Example Request:**
 
   `https://weather-web-server-7xqe.onrender.com/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
-<br>
+  <br>
 
 ## Usage Notes
 
