@@ -14,7 +14,6 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
   - [4. Get Weather Forecast by Coordinates](#4-get-weather-forecast-by-coordinates)
   - [5. Get Weather icon (image)](#5-get-weather-icon-image)
 
-
 - [Example](#example)
 - [Usage Notes](#usage-notes)
   <br>
@@ -47,10 +46,12 @@ Fetch the current weather details for a specific location.
 
   - `location` (required): The name of the city or location (e.g., `London`).
   - `Lang` (optional): Language code for localized weather descriptions. Default is en (English).
+  - `units` (optional): The default weather unit will be is `metric` witch is Celsius however you can
+    change it to `imperial` witch is Fahrenheit.
 
 # Example
 
-`https://weather-web-server-7xqe.onrender.com/api/weather?location=<location>&lang=<Language>`
+`https://weather-web-server-7xqe.onrender.com/api/weather?location=<location>&lang=<Language>&units=<units>`
 <br>
 
 # Language options
@@ -66,7 +67,6 @@ Fetch the current weather details for a specific location.
 | Japanese             | ja    | Korean                | kr    |
 | Swedish              | se    | Turkish               | tr    |
 
-
 <br>
 
 ### 2. Get Weather Forecast
@@ -76,12 +76,15 @@ Fetch a 5-day weather forecast for a specific location.
 - **Endpoint:**  
   `GET /api/forecast`
 
-- **Query Parameters:**
-- `location` (required): The name of the city or location (e.g., `New York`).
+  - **Query Parameters:**
+  - `location` (required): The name of the city or location (e.g., `New York`).
+  - `Lang` (optional): Language code for localized weather descriptions. Default is en (English).
+  - `units` (optional): The default weather unit will be is `metric` witch is Celsius however you can
+  change it to `imperial` witch is Fahrenheit.
 
 - **Example Request:**
 
-`https://weather-web-server-7xqe.onrender.com/api/forecast?location=<location>&lang=<Language>`
+`https://weather-web-server-7xqe.onrender.com/api/forecast?location=<location>&lang=<Language>&units=<units>`
 <br>
 
 ### 3. Get Current Weather by Coordinates
@@ -93,13 +96,17 @@ Fetch the current weather details using latitude and longitude.
 
 - **Query Parameters:**
 
-  - lat (required): Latitude of the location (e.g., 51.5074).
-  - lon (required): Longitude of the location (e.g., -0.1278).
-  - lang (optional): Language code for localized weather descriptions. Default is en (English).
+  - `lat` (required): Latitude of the location (e.g., 51.5074).
+  - `lon` (required): Longitude of the location (e.g., -0.1278).
+  - `lang` (optional): Language code for localized weather descriptions. Default is en (English).
+  - `Lang` (optional): Language code for localized weather descriptions. Default is en (English).
+  - `units` (optional): The default weather unit will be is `metric` witch is Celsius however you can
+    change it to `imperial` witch is Fahrenheit.
 
 - **Example Request:**
 
-`https://weather-web-server-7xqe.onrender.com/api/weather/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
+`https://weather-web-server-7xqe.onrender.com/api/weather/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>&units=<units>`
+
 <br>
 
 ### 4. Get Weather Forecast by Coordinates
@@ -111,9 +118,12 @@ Fetch a 5-day weather forecast using latitude and longitude.
 
 - **Query Parameters:**
 
-  - lat (required): Latitude of the location (e.g., 40.7128).
-  - lon (required): Longitude of the location (e.g., -74.0060).
-  - lang (optional): Language code for localized weather descriptions. Default is en (English).
+  - `lat` (required): Latitude of the location (e.g., 51.5074).
+  - `lon` (required): Longitude of the location (e.g., -0.1278).
+  - `lang` (optional): Language code for localized weather descriptions. Default is en (English).
+  - `Lang` (optional): Language code for localized weather descriptions. Default is en (English).
+  - `units` (optional): The default weather unit will be is `metric` witch is Celsius however you can
+    change it to `imperial` witch is Fahrenheit.
 
 - **Example Request:**
 
@@ -127,7 +137,6 @@ Fetch a 5-day weather forecast using latitude and longitude.
 
 - **Example Request:**
   `https://openweathermap.org/img/wn/<icon>@2x.png`
-
 
 ## Usage Notes
 
