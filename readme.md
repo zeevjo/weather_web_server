@@ -31,6 +31,8 @@ It abstracts the need to use an API key in an unsecured manner due to the limita
 The server is live and can be accessed at:
 
 `https://weather-web-server-7xqe.onrender.com`
+
+throw out this documentation will refer to it as `BASE_URL`
 <br>
 
 ## Endpoints
@@ -51,7 +53,7 @@ Fetch the current weather details for a specific location.
 
 # Example
 
-`https://weather-web-server-7xqe.onrender.com/api/weather?location=<location>&lang=<Language>&units=<units>`
+`BASE_URL/api/weather?location=<location>&lang=<Language>&units=<units>`
 <br>
 
 # Language options
@@ -84,7 +86,7 @@ Fetch a 5-day weather forecast for a specific location.
 
 - **Example Request:**
 
-`https://weather-web-server-7xqe.onrender.com/api/forecast?location=<location>&lang=<Language>&units=<units>`
+`BASE_URL/api/forecast?location=<location>&lang=<Language>&units=<units>`
 <br>
 
 ### 3. Get Current Weather by Coordinates
@@ -105,7 +107,7 @@ Fetch the current weather details using latitude and longitude.
 
 - **Example Request:**
 
-`https://weather-web-server-7xqe.onrender.com/api/weather/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>&units=<units>`
+`BASE_URL/api/weather/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>&units=<units>`
 
 <br>
 
@@ -127,7 +129,7 @@ Fetch a 5-day weather forecast using latitude and longitude.
 
 - **Example Request:**
 
-  `https://weather-web-server-7xqe.onrender.com/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
+  `BASE_URL/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
   <br>
 
 ### 5. Get Weather icon (image)
