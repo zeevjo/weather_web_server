@@ -129,7 +129,7 @@ Fetch a 5-day weather forecast using latitude and longitude.
 
 - **Example Request:**
 
-  `BASE_URL/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>`
+  `BASE_URL/api/forecast/coordinates?lat=<latitude>&lon=<longitude>&lang=<Language>&units=<units>`
   <br>
 
 ### 5. Get Weather icon (image)
