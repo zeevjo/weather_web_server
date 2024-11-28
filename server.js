@@ -92,10 +92,12 @@ app.get("/api/cronjob", async (req, res) => {
 });
 
 app.use((error, req, res, next) => {
-  console.error("Error:", error.message);
-  res
-    .status(500)
-    .json({ success: false, error: error.message || "Internal Server Error" });
+  console.error("Error:", error.message);  
+
+  res.status(error.status || 500).json({
+    success: false,
+    error: error.message || "Internal Server Error",
+  });
 });
 
 const fetchWeatherData = async (endpoint, location, lang = "en") => {
@@ -103,7 +105,9 @@ const fetchWeatherData = async (endpoint, location, lang = "en") => {
   const response = await fetch(url);
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(`API Error: ${response.status} - ${errorText}`);
+    const error = new Error(`API Error: ${response.status} - ${errorText}`);
+    error.status = response.status;
+    throw error;
   }
   return response.json();
 };
@@ -122,7 +126,9 @@ const fetchWeatherDataByCoordinates = async (
   const response = await fetch(url);
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(`API Error: ${response.status} - ${errorText}`);
+    const error = new Error(`API Error: ${response.status} - ${errorText}`);
+    error.status = response.status;
+    throw error;
   }
   return response.json();
 };
