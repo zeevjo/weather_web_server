@@ -1,4 +1,5 @@
 .vscode/
 .env
 /node_modules/
-end-points.txt
+end-points/
+test.js

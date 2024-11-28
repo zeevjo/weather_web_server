@@ -30,12 +30,13 @@ const validateLocationQuery = (req, res, next) => {
 };
 
 app.get("/api/weather", validateLocationQuery, async (req, res, next) => {
-  const { location, lang } = req.query;
+  const { location, lang, units } = req.query;
   try {
     const weatherData = await fetchWeatherData(
       "weather",
       location,
-      lang || "en"
+      lang || "en",
+      units || "metric"
     );
     res.json({ success: true, data: weatherData });
   } catch (error) {
@@ -44,12 +45,13 @@ app.get("/api/weather", validateLocationQuery, async (req, res, next) => {
 });
 
 app.get("/api/forecast", validateLocationQuery, async (req, res, next) => {
-  const { location, lang } = req.query;
+  const { location, lang, units } = req.query;
   try {
     const forecastData = await fetchWeatherData(
       "forecast",
       location,
-      lang || "en"
+      lang || "en",
+      units || "metric"
     );
     res.json({ success: true, data: forecastData });
   } catch (error) {
@@ -58,13 +60,14 @@ app.get("/api/forecast", validateLocationQuery, async (req, res, next) => {
 });
 
 app.get("/api/weather/coordinates", async (req, res, next) => {
-  const { lat, lon, lang } = req.query;
+  const { lat, lon, lang, units } = req.query;
   try {
     const weatherData = await fetchWeatherDataByCoordinates(
       "weather",
       lat,
       lon,
-      lang || "en"
+      lang || "en",
+      units || "metric"
     );
     res.json({ success: true, data: weatherData });
   } catch (error) {
@@ -73,13 +76,14 @@ app.get("/api/weather/coordinates", async (req, res, next) => {
 });
 
 app.get("/api/forecast/coordinates", async (req, res, next) => {
-  const { lat, lon, lang } = req.query;
+  const { lat, lon, lang, units } = req.query;
   try {
     const forecastData = await fetchWeatherDataByCoordinates(
       "forecast",
       lat,
       lon,
-      lang || "en"
+      lang || "en",
+      units || "metric"
     );
     res.json({ success: true, data: forecastData });
   } catch (error) {
@@ -92,7 +96,7 @@ app.get("/api/cronjob", async (req, res) => {
 });
 
 app.use((error, req, res, next) => {
-  console.error("Error:", error.message);  
+  console.error("Error:", error.message);
 
   res.status(error.status || 500).json({
     success: false,
@@ -100,8 +104,13 @@ app.use((error, req, res, next) => {
   });
 });
 
-const fetchWeatherData = async (endpoint, location, lang = "en") => {
-  const url = `${BASE_URL}/${endpoint}?q=${location}&appid=${API_KEY}&units=metric&lang=${lang}`;
+const fetchWeatherData = async (
+  endpoint,
+  location,
+  lang = "en",
+  units = "metric"
+) => {
+  const url = `${BASE_URL}/${endpoint}?q=${location}&appid=${API_KEY}&units=${units}&lang=${lang}`;
   const response = await fetch(url);
   if (!response.ok) {
     const errorText = await response.text();
@@ -116,13 +125,14 @@ const fetchWeatherDataByCoordinates = async (
   endpoint,
   lat,
   lon,
-  lang = "en"
+  lang = "en",
+  units = "metric"
 ) => {
   if (!lat || !lon) {
     throw new Error("Latitude (lat) and Longitude (lon) are required.");
   }
 
-  const url = `${BASE_URL}/${endpoint}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=${lang}`;
+  const url = `${BASE_URL}/${endpoint}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=${units}&lang=${lang}`;
   const response = await fetch(url);
   if (!response.ok) {
     const errorText = await response.text();
